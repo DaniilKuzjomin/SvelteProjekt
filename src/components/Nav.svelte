@@ -8,7 +8,7 @@
 
 	async function logout(){
 		await post('auth/logout')
-		$session.user = null;
+		$session.token = null;
 		goto('/');
 	}
 </script>
@@ -47,7 +47,7 @@
 		content: '';
 		width: calc(100% - 1em);
 		height: 2px;
-		background-color: rgb(255,62,0);
+		background-color: rgb(255, 72, 0);
 		display: block;
 		bottom: -1px;
 	}
@@ -59,16 +59,15 @@
 	}
 </style>
 
+{JSON.stringify($session)}
 <nav>
 	<ul>
 		{#if $session.token}
 			<li><a aria-current="{segment === 'logout' ? 'page' : undefined}" href="{logout}" on:click|preventDefault={logout}>logout</a></li>
-			{:else}
+		{:else}
 			<li><a aria-current="{segment === 'login' ? 'page' : undefined}" href="login">login</a></li>
 			<li><a aria-current="{segment === 'register' ? 'page' : undefined}" href="register">register</a></li>
 		{/if}
-
-
 
 	</ul>
 </nav>
