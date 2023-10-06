@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-    <title>Sign up • Conduit</title>
+    <title>Sign up • MMM</title>
 </svelte:head>
 
 <div class="auth-page">
